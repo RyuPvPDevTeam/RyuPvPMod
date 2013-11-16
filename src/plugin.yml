@@ -1,0 +1,38 @@
+name: RyuPvPMod
+main: me.hawkeyeshi.RyuPvPMod.RyuPvPMod
+version: 1.0
+
+commands: 
+
+   RyuInfo:
+     description: Information about the RyuPvPMod plugin
+     usage: /RyuInfo
+     
+   cheater:
+     description: Ban a cheater!
+     usage: /cheater [player]
+     permission: RyuPvPMod.cheater
+     
+   badboy:
+     description: Deem someone a bad boy!
+     usage: /badboy [user]
+     permission: RyuPvPMod.badboy
+
+   boomdoom:
+     description: Doom someone!
+     usage: /boomdoom [player]
+     permission: RyuPvPMod.boomdoom
+     
+   wazzup:
+     description: WAZZUP?
+     usage: /wazzup
+     
+   hawk:
+    description: See if someone can fly :D`
+    usage: /hawk [player]
+    permission: RyuPvPMod.hawk
+    
+   requiem:
+    description: A secwet command for RequiemDestiny only.
+    usage: /requiem [player]
+    permission: RyuPvPMod.requiem
