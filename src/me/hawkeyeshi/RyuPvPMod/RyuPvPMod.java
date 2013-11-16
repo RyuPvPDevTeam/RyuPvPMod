@@ -144,7 +144,7 @@ public final class RyuPvPMod extends JavaPlugin{
                             	else if(cmd.getName().equalsIgnoreCase("bstoggle")){
     		
     		if (args.length > 0){
-    			sender.sendMessage(ChatColor.RED + "Too many arguments!");
+    			sender.sendMessage(INCORRECT_ARGS);
     			return false;
     		}
     		
