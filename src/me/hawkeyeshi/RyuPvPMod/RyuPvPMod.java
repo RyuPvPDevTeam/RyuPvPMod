@@ -13,10 +13,13 @@ import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 
@@ -37,9 +40,38 @@ public final class RyuPvPMod extends JavaPlugin{
         
         @Override
 	public void onDisable(){
-		getLogger().info("RyuPvPMod version 1.0 has been Diabled!");
+		getLogger().info("RyuPvPMod version 1.0 has been Diabled! ~ Goodbye :(");
 	}
 		
+        int bson = 1;
+        int explosionsize = 10;
+        
+        @SuppressWarnings("deprecation")
+
+        @EventHandler
+            public void onPlayerInteractBlock(PlayerInteractEvent event) {
+                Player player = event.getPlayer();
+
+                if (player.getItemInHand().getType() == Material.BLAZE_ROD) {
+                if(player.hasPermission("ryupvp.bs.use")) {
+                if(bson == 1) {
+    		Block targetblock = player.getTargetBlock(null, 500);
+    		World world = player.getWorld();
+    		Location location = targetblock.getLocation();
+    		world.createExplosion(location, explosionsize);
+    		getLogger().info(player.getName() + ", created a size " + explosionsize + " explosion!");
+            }
+                else {player.sendMessage("Boom Stick is off!");
+            }}
+            else {
+    		getLogger().info(player.getName() + " has attempted to use the Boom Stick!");
+    		player.sendMessage(ChatColor.RED + player.getName() + ", You do NOT have permission to use this destructive tool,"
+    				+ ChatColor.LIGHT_PURPLE + " a log of this request has been stored...");
+    	}
+    
+   
+      }
+    }
 
         @Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
@@ -54,6 +86,7 @@ public final class RyuPvPMod extends JavaPlugin{
                                 else{
                                     sender.sendMessage("Too many arguments!");
                                 }
+                        
 				// /cheater command
 			}else if(cmd.getName().equalsIgnoreCase("cheater")){
 				if(player.hasPermission("RyuPvPMod.cheater")){
@@ -106,7 +139,32 @@ public final class RyuPvPMod extends JavaPlugin{
                                         }else{
                                             player.sendMessage(NO_PERMS);
                                         }
-				}else if(cmd.getName().equalsIgnoreCase("requiem")){
+                                
+				}//BoomStick toggling command
+                            	else if(cmd.getName().equalsIgnoreCase("bstoggle")){
+    		
+    		if (args.length > 0){
+    			sender.sendMessage(ChatColor.RED + "Too many arguments!");
+    			return false;
+    		}
+    		
+    		if(bson == 1){
+    			bson = 0;
+    			sender.sendMessage(ChatColor.BLUE + "Boom Stick has been disabled!");
+    			return true;
+    		}
+    		if(bson == 0);{
+    			bson = 1;
+    			sender.sendMessage(ChatColor.BLUE + "Boom Stick has been enabled!");
+    			return true;
+    		}
+    	}
+    	else if(cmd.getName().equalsIgnoreCase("bssize")){
+    		explosionsize = Integer.parseInt(args[0]);
+    		sender.sendMessage(ChatColor.BLUE + "Boom stick radius set to: " + explosionsize + "!");
+    		return true;
+    	}
+                        else if(cmd.getName().equalsIgnoreCase("requiem")){
                                         if(sender != requiemdestiny){
                                             player.sendMessage(ChatColor.RED + "You're not Requiem and therefore cannot use this command.");
                                         }else if(args.length == 0 || args.length > 1){

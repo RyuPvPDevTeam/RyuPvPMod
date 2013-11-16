@@ -23,6 +23,16 @@ commands:
      usage: /boomdoom [player]
      permission: RyuPvPMod.boomdoom
      
+   bstoggle:
+     description: Toggle the boomstick
+     usage: /bstoggle
+     permission: RyuPvPMod.bstoggle
+     
+   bssize:
+     description: Change the size of the boom stick
+     usage: /bssize [Int]
+     permission: RyuPvPMod.bssize
+     
    wazzup:
      description: WAZZUP?
      usage: /wazzup
