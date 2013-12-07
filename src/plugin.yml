@@ -12,16 +12,19 @@ commands:
      description: Ban a cheater!
      usage: /cheater [player]
      permission: RyuPvPMod.cheater
-     
+       default: OP
+       
    badboy:
      description: Deem someone a bad boy!
      usage: /badboy [user]
      permission: RyuPvPMod.badboy
+       defualt: OP
 
    boomdoom:
      description: Doom someone!
      usage: /boomdoom [player]
      permission: RyuPvPMod.boomdoom
+       defualt: OP
      
    bstoggle:
      description: Toggle the boomstick
@@ -32,7 +35,7 @@ commands:
      description: Change the size of the boom stick
      usage: /bssize [Int]
      permission: RyuPvPMod.bssize
-     
+       
    wazzup:
      description: WAZZUP?
      usage: /wazzup
@@ -41,8 +44,16 @@ commands:
     description: See if someone can fly :D`
     usage: /hawk [player]
     permission: RyuPvPMod.hawk
+      default: OP
     
    requiem:
     description: A secwet command for RequiemDestiny only.
     usage: /requiem [player]
     permission: RyuPvPMod.requiem
+      default: OP
+    
+   ryusay:
+     description: RPM's broadcasting command
+     usage: /ryusay [message]
+     permission: RyuPvPMod.ryusay
+       default: OP
