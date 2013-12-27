@@ -41,6 +41,7 @@ public class Commands_Hawk extends JavaPlugin {
                                         if(target.isFlying()){
                                             target.setFlying(false);
                                         }else{
+                                            
                                             player.sendMessage(NO_PERMS);
                                         }
                         }
