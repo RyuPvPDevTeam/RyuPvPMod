@@ -18,7 +18,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  *
- * @author Kyle
+ * @author Kyle1
  */
 public class Commands_Hawk extends JavaPlugin {
         Player player = (Player) sender;
