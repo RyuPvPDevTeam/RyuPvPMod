@@ -36,12 +36,12 @@ public final class RyuPvPMod extends JavaPlugin{
 
         @Override
 	public void onEnable(){
-	getLogger().INFO, "{0} Version{1} Has Been Enables", new Object[]
+	getLogger().info("RyuPvPMod Version 1.0 has been enabled!");
 	}
         
         @Override
 	public void onDisable(){
-		getLogger().INFO, "{0} Version{1} Has Been Disabled", new Object[]
+		getLogger().info("RyuPvPMod has been disabled!")
 	}
 		
         int bson = 1;
