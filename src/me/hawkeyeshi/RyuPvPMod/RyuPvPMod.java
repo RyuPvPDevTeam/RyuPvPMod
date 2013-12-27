@@ -31,17 +31,17 @@ public final class RyuPvPMod extends JavaPlugin{
         public static String INCORRECT_ARGS = ChatColor.RED + "There is an incorrect number of arguments in the command you just performed.";
         public static String NO_PERMS = ChatColor.RED + "You do not have permission to perform this command";
 	public static RyuPvPMod plugin;
-	public static final Logger logger  = Logger.getLogger("Minecraft-Server");
+	public static final Logger logger = Bukkit.getLogger();
         private float OF;
 
         @Override
 	public void onEnable(){
-		getLogger().info("RyuPvPMod Version 1.0 (by Hawkeyeshi, Camzie99 and RequiemDestiny) has been Enabled!");
+	getLogger().INFO, "{0} Version{1} Has Been Enables", new Object[]
 	}
         
         @Override
 	public void onDisable(){
-		getLogger().info("RyuPvPMod version 1.0 has been Diabled! ~ Goodbye :(");
+		getLogger().INFO, "{0} Version{1} Has Been Disabled", new Object[]
 	}
 		
         int bson = 1;
