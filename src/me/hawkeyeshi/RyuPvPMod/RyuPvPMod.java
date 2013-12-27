@@ -189,9 +189,9 @@ public final class RyuPvPMod extends JavaPlugin{
 							message.concat(" " + s);
 						}
 						
-						String ryu = ChatColor.DARK_RED + "Ryu";
-						String pvp = ChatColor.GRAY + "PvP- ";
-						String person = ChatColor.DARK_RED + player.getName();
+						String ryu = "ChatColor.DARK_RED + "Ryu"";
+						String pvp = "ChatColor.GRAY + "PvP- """;
+						String person = "ChatColor.DARK_RED + player.getName()";
 						
 						Bukkit.broadcastMessage(ChatColor.BOLD + ryu + ChatColor.BOLD + pvp + ChatColor.BOLD + person + ChatColor.WHITE + message);
 					}
