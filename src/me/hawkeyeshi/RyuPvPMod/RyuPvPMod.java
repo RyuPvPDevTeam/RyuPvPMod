@@ -41,7 +41,7 @@ public final class RyuPvPMod extends JavaPlugin{
         
         @Override
 	public void onDisable(){
-		getLogger().info("RyuPvPMod has been disabled!")
+		getLogger().info("RyuPvPMod has been disabled!");
 	}
 		
         int bson = 1;
