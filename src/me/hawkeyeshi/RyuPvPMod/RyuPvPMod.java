@@ -27,7 +27,10 @@ public final class RyuPvPMod extends JavaPlugin{
         private Commands_Cheater Commands_Cheater;
         private Commands_Badboy Commands_Badboy;
         private Commands_BoomDoom Commands_BoomDoom;
-
+        private Commands_Hawk Commands_Hawk;
+        private Commands_Requiem Commands_Requiem;   
+        private Commands_RyuSay Commands_RyuSay;   
+        
         public Player requiemdestiny = Bukkit.getServer().getPlayer("RequiemDestiny");
 	public Player hawkeyeshi = Bukkit.getServer().getPlayer("hawkeyeshi");
 	public Player ryusagez = Bukkit.getServer().getPlayer("Ryusagez");
@@ -100,9 +103,7 @@ public final class RyuPvPMod extends JavaPlugin{
     getCommand("RyuSay").setExecutor((CommandExecutor) this.Commands_RyuSay);   
 
 				// /wazzup command
-
-
-                                
+ 
                                 
 /***THIS BELONGS IN A PLAYER JOIN EVENT ?????????????
 

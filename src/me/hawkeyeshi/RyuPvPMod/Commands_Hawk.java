@@ -21,16 +21,10 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author Kyle1
  */
 public class Commands_Hawk extends JavaPlugin {
-        Player player = (Player) sender;
-		Player target;
-
-    public Commands_Hawk() {
-        this.target = sender.getServer().getPlayer(args[0]);
-    }
-                
                 @Override
         	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-			
+                    Player target = Bukkit.getPlayer(args[0]);
+                    Player player = (Player) sender;
                     if(cmd.getName().equalsIgnoreCase("hawk")){
 					Location Loc = new Location(Bukkit.getWorld("world"),~0,125,~0);
 					target.teleport(Loc);

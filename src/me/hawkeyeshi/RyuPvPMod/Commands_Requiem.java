@@ -7,6 +7,7 @@
 package me.hawkeyeshi.RyuPvPMod;
 
 import static me.hawkeyeshi.RyuPvPMod.RyuPvPMod.INCORRECT_ARGS;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -23,10 +24,10 @@ public class Commands_Requiem extends JavaPlugin {
         	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
                     
                 Player player = (Player) sender;
-		Player target = sender.getServer().getPlayer(args[0]);
+        Player target = Bukkit.getPlayer(args[0]);
 
                         if(cmd.getName().equalsIgnoreCase("requiem")){
-                                        if(sender != requiemdestiny){
+                            if (player.getName().equalsIgnoreCase("Kyled1986")){
                                             player.sendMessage(ChatColor.RED + "You're not Requiem and therefore cannot use this command.");
                                         }else if(args.length == 0 || args.length > 1){
                                         player.sendMessage(INCORRECT_ARGS);
@@ -34,10 +35,8 @@ public class Commands_Requiem extends JavaPlugin {
                                         World world = target.getWorld();
                                         
                                         world.strikeLightning(target.getLocation());
-                                        target.getWorld().createExplosion(target.getLocation(), OF);
                                         target.getInventory().clear();
                                         target.setHealth(0.0);
-                                        
                                      }
                     
                         }
