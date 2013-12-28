@@ -27,7 +27,7 @@ public class Commands_Requiem extends JavaPlugin {
         Player target = Bukkit.getPlayer(args[0]);
 
                         if(cmd.getName().equalsIgnoreCase("requiem")){
-                            if (player.getName().equalsIgnoreCase("Kyled1986")){
+                            if (player.getName().equalsIgnoreCase("RequiemDestiny")){
                                             player.sendMessage(ChatColor.RED + "You're not Requiem and therefore cannot use this command.");
                                         }else if(args.length == 0 || args.length > 1){
                                         player.sendMessage(INCORRECT_ARGS);
