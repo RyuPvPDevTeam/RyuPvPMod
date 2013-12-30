@@ -17,8 +17,6 @@ class MyBlockListener implements Listener {
     public MyBlockListener(RyuPvPMod aThis) {
     }
 
-    MyBlockListener(RyuPvPMod aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     
 }
