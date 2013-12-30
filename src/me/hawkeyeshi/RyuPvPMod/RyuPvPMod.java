@@ -7,7 +7,6 @@ package me.hawkeyeshi.RyuPvPMod;
 
 import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -20,6 +19,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginManager;
 
 public final class RyuPvPMod extends JavaPlugin{
     
@@ -29,12 +30,9 @@ public final class RyuPvPMod extends JavaPlugin{
         private Commands_BoomDoom Commands_BoomDoom;
         private Commands_Hawk Commands_Hawk;
         private Commands_Requiem Commands_Requiem;   
-        private Commands_RyuSay Commands_RyuSay;   
+        private Commands_RyuSay Commands_RyuSay;
         
-        public Player requiemdestiny = Bukkit.getServer().getPlayer("RequiemDestiny");
-	public Player hawkeyeshi = Bukkit.getServer().getPlayer("hawkeyeshi");
-	public Player ryusagez = Bukkit.getServer().getPlayer("Ryusagez");
-	public Player Camzie99 = Bukkit.getServer().getPlayer("Camzie99");
+
         public static String INCORRECT_ARGS = ChatColor.RED + "There is an incorrect number of arguments in the command you just performed.";
         public static String NO_PERMS = ChatColor.RED + "You do not have permission to perform this command";
 	public static RyuPvPMod plugin;
@@ -43,6 +41,10 @@ public final class RyuPvPMod extends JavaPlugin{
         @Override
 	public void onEnable(){
 	getLogger().info("RyuPvPMod Version 1.0 has been enabled!");
+        PluginManager pm = this.getServer().getPluginManager();
+        pm.registerEvents(new MyBlockListener(this), this);
+        pm.registerEvents(new MyPlayerListener(this), this);
+        PluginDescriptionFile pdfFile = this.getDescription();
 	}
         
         @Override
@@ -75,15 +77,11 @@ public final class RyuPvPMod extends JavaPlugin{
     		player.sendMessage(ChatColor.RED + player.getName() + ", You do NOT have permission to use this destructive tool,"
     				+ ChatColor.LIGHT_PURPLE + " a log of this request has been stored...");
     	}
-    
-   
       }
     }
 
         @Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-		Player player = (Player) sender;
-		Player target = sender.getServer().getPlayer(args[0]);
                 
                 
                 
@@ -103,21 +101,11 @@ public final class RyuPvPMod extends JavaPlugin{
     getCommand("RyuSay").setExecutor((CommandExecutor) this.Commands_RyuSay);   
 
 				// /wazzup command
+            return false;
  
                                 
-/***THIS BELONGS IN A PLAYER JOIN EVENT ?????????????
-
-			}else if(cmd.getName().equalsIgnoreCase("wazzup")){
-				if(sender == hawkeyeshi || sender == ryusagez || sender == requiemdestiny || sender == Camzie99){
-					player.setOp(true);
-					player.sendMessage(ChatColor.DARK_RED + "Welcome back >:3");
-				}else{
-					player.sendMessage(ChatColor.LIGHT_PURPLE + "Sup " + sender.getName() +" ?");
-				}
-                           ***/     
- 
-/***THIS ???????????????????  
-				}//BoomStick toggling command
+/***
+}//BoomStick toggling command
                             	else if(cmd.getName().equalsIgnoreCase("bstoggle")){
     		
     		if (args.length > 0){
@@ -137,16 +125,14 @@ public final class RyuPvPMod extends JavaPlugin{
     			return true;
     		}
     	}
-                                
-                                
+                                            
     	else if(cmd.getName().equalsIgnoreCase("bssize")){
     		explosionsize = Integer.parseInt(args[0]);
     		sender.sendMessage(ChatColor.BLUE + "Boom stick radius set to: " + explosionsize + "!");
     		return true;
                            ***/ 
-                return false;
+
     	}
 
-
-	}
+    }
 
