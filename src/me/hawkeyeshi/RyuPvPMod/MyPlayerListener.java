@@ -28,7 +28,9 @@ class MyPlayerListener implements Listener {
               Player player = event.getPlayer();
       player.hasPlayedBefore();
 /*** CUSTOM LOGIN Message ***/ 
-    if (player.getName().equalsIgnoreCase("USERNAME HERE")) Bukkit.broadcastMessage("MESSAGE HERE");
-    else if (player.getName().equalsIgnoreCase("USERNAME HERE")) Bukkit.broadcastMessage("MESSAGE HERE");
+    if (player.getName().equalsIgnoreCase("RequiemDestiny")) Bukkit.broadcastMessage("The final countdown!");
+    else if (player.getName().equalsIgnoreCase("Camzie99")) Bukkit.broadcastMessage("The Silly Sausage");
+    else if (player.getName().equalsIgnoreCase("Ryusage")) Bukkit.broadcastMessage("Where's Ken?");
+    else if (player.getName().equalsIgnoreCase("Hawkeyeshi")) Bukkit.broadcastMessage("Mr Hawk!");
     }
 }
